@@ -29,7 +29,7 @@ function Map()
   self.delete = function(key)
     local index = dict[key]
 
-    if index >= 1 then
+    if index ~= nil then
       self.items[key] = nil
       list[index] = nil
       dict[key] = nil

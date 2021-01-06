@@ -38,6 +38,7 @@ test('delete', function(_assert)
   )
 
   _assert.equal(object.size, 3)
+  _assert.not_ok(object.delete('friends'))
   _assert.ok(object.delete('profession'))
   _assert.not_ok(object.has('profession'))
   _assert.deep_equal(
