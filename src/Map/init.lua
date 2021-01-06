@@ -12,8 +12,10 @@ function Map()
     end
 
     table.insert(list, key)
-    dict[key] = #list
+    local size = #list
+    dict[key] = size
     self.items[key] = value
+    self.size = size
   end
 
   self.get = function(key)
@@ -27,7 +29,7 @@ function Map()
   self.delete = function(key)
     local index = dict[key]
 
-    if index >= 0 then
+    if index >= 1 then
       self.items[key] = nil
       list[index] = nil
       dict[key] = nil
