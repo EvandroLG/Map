@@ -40,6 +40,15 @@ function Map()
     return false
   end
 
+  self.each = function(callback)
+    for i=1, #list do
+      local key = list[i]
+      local value = self.get(key)
+
+      callback(key, value)
+    end
+  end
+
   return self
 end
 

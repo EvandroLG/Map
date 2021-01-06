@@ -61,3 +61,23 @@ test('delete', function(_assert)
     }
   )
 end)
+
+test('each', function(_assert)
+  local keys = {}
+  local values = {}
+
+  object.each(function(key, value)
+    table.insert(keys, key)
+    table.insert(values, value)
+  end)
+
+  _assert.deep_equal(
+    keys,
+    { 'name', 'age', 'profession' }
+  )
+
+  _assert.deep_equal(
+    values,
+    { 'Evandro', 34, 'Software Engineer' }
+  )
+end)
