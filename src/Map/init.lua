@@ -1,18 +1,20 @@
 function Map()
   local dict = {}
-  local list = {}
   local self = {}
 
+  self.keys = {}
+  self.values = {}
   self.items = {}
   self.size = 0
 
   self.set = function(key, value)
-    if dict[key] then
+    if dict[key] ~= nil then
       self.delete(key)
     end
 
-    table.insert(list, key)
-    local size = #list
+    table.insert(self.keys, key)
+    table.insert(self.values, value)
+    local size = #self.keys
     dict[key] = size
     self.items[key] = value
     self.size = size
@@ -30,8 +32,10 @@ function Map()
     local index = dict[key]
 
     if index ~= nil then
+      self.size = self.size - 1
       self.items[key] = nil
-      list[index] = nil
+      self.keys[index] = nil
+      self.values[index] = nil
       dict[key] = nil
 
       return true
@@ -41,8 +45,8 @@ function Map()
   end
 
   self.each = function(callback)
-    for i=1, #list do
-      local key = list[i]
+    for i=1, #self.keys do
+      local key = self.keys[i]
       local value = self.get(key)
 
       callback(key, value)

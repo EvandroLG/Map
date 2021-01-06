@@ -5,6 +5,36 @@ local object = Map()
 object.set('name', 'Evandro')
 object.set('age', 34)
 
+test('keys', function(_assert)
+  _assert.deep_equal(
+    object.keys,
+    { 'name', 'age' }
+  )
+
+  object.set('profession', 'Programmer')
+  _assert.deep_equal(
+    object.keys,
+    { 'name', 'age', 'profession' }
+  )
+
+  object.delete('profession')
+end)
+
+test('values', function(_assert)
+  _assert.deep_equal(
+    object.values,
+    { 'Evandro', 34 }
+  )
+
+  object.set('profession', 'Programmer')
+  _assert.deep_equal(
+    object.values,
+    { 'Evandro', 34, 'Programmer' }
+  )
+
+  object.delete('profession')
+end)
+
 test('set', function(_assert)
   _assert.deep_equal(
     object.items,
