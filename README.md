@@ -28,7 +28,6 @@ bill.each(function(key, value)
 end)
 -- name = Bill Gates
 -- age = 65
-
 ```
 
 ## API
