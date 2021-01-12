@@ -1,4 +1,4 @@
-# set-lua &middot; [![Build Status](https://travis-ci.org/EvandroLG/Map.svg?branch=master)](https://travis-ci.org/EvandroLG/set-lua) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
+# set-lua &middot; [![Build Status](https://travis-ci.org/EvandroLG/Map.svg?branch=master)](https://travis-ci.org/EvandroLG/Map) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 Map works like a hashtable but preserving the key insertion order.
 
 ## Installation
