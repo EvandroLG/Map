@@ -8,6 +8,29 @@ To install `Map`, run:
 $ luarocks install map
 ```
 
+## Usage
+```lua
+local Map = require('Map')
+local bill = Map()
+
+bill.set('name', 'Bill Gates')
+bill.set('age', 65)
+
+bill.has('name') -- true
+bill.has('company') -- false
+
+bill.get('name') -- 'Bill Gates'
+bill.get('age') -- 65
+bill.get('company') -- nil
+
+bill.each(function(key, value)
+  print(key .. ' = ' .. value)
+end)
+-- name = Bill Gates
+-- age = 65
+
+```
+
 ## API
 ### Properties
 * Map.<code>items:table</code><br />
